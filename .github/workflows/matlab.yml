@@ -36,6 +36,8 @@ jobs:
           echo "AStruct()" >> test.m
           cat test.m
 
+      - run: python -c "import cmake_example as m; m.AStruct()"
+
       - uses: matlab-actions/setup-matlab@v0
         with:
           release: R2022a
