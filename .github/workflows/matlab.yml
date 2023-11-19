@@ -27,7 +27,10 @@ jobs:
           echo "CXX=g++-9" >> $GITHUB_ENV
           VERBOSE=1 pip install --verbose -e .
 
-      - run: echo "m = py.importlib.import_module('cmake_example');\n m.add(1,2)" > test.m
+      - run: |
+          echo "m = py.importlib.import_module('cmake_example')" > test.m
+          echo "m.add(1,2)" >> test.m
+          cat test.m
 
       - uses: matlab-actions/setup-matlab@v0
         with:
