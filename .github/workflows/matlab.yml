@@ -10,6 +10,7 @@ on:
   pull_request:
     branches: [ master ]
  
+
 jobs:
   matlab:
     runs-on: ubuntu-20.04
@@ -30,7 +31,8 @@ jobs:
 
       - run: |
           echo "m = py.importlib.import_module('cmake_example')" > test.m
-          echo "m.add(1,2)" >> test.m
+          echo "AStruct = m.AStruct" >> test.m
+          echo "AStruct()" >> test.m
           cat test.m
 
       - uses: matlab-actions/setup-matlab@v0
