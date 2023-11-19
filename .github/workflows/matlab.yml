@@ -10,7 +10,6 @@ on:
   pull_request:
     branches: [ master ]
  
-
 jobs:
   matlab:
     runs-on: ubuntu-20.04
@@ -21,6 +20,8 @@ jobs:
           submodules: recursive
 
       - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
 
       - run: |
           echo "CC=gcc-9" >> $GITHUB_ENV
